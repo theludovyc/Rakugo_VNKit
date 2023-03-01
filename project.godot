@@ -8,14 +8,49 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "RakuScriptDialogue",
+"language": "GDScript",
+"path": "res://addons/Rakugo/lib/nodes/RakuScriptDialogue.gd"
+} ]
+_global_script_class_icons={
+"RakuScriptDialogue": ""
+}
+
+[addons]
+
+rakugo/game_version="1.0.0"
+rakugo/history_length=30
+rakugo/narrator/name="narrator"
+rakugo/debug=false
+rakugo/save_folder="user://saves"
+
 [application]
 
 config/name="Rakugo_VNKit"
+run/main_scene="res://Scene/Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Rakugo="*res://addons/Rakugo/Rakugo.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Rakugo/plugin.cfg" )
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+mouse_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [physics]
 
